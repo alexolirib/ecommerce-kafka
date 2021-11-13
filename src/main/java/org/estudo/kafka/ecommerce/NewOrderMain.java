@@ -1,5 +1,6 @@
 package org.estudo.kafka.ecommerce;
 
+import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -13,19 +14,25 @@ public class NewOrderMain {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         //producer
         var producer = new KafkaProducer<String, String>(properties());
-        var key= "chave";
+        var key= "compra";
         var value= "10992310298,3232,44";
         var record = new ProducerRecord<>("ECOMMERCE_NEW_ORDER", key, value);
         //funciona de forma assyncrono
 //        producer.send(record).get();
         //criado um callBack para conseguir esperar o retorno
-        producer.send(record, (data, ex)->{
-            if (ex != null){
+        Callback callback = (data, ex) -> {
+            if (ex != null) {
                 ex.printStackTrace();
                 return;
             }
-            System.out.println("Sucesso enviado "+ data.topic()+ ":::partition "+ data.partition()+ "/ offset"+ data.offset()+ "/ timestamp "+data.timestamp());
-        }).get();
+            System.out.println("Sucesso enviado " + data.topic() + ":::partition " + data.partition() + "/ offset" + data.offset() + "/ timestamp " + data.timestamp());
+        };
+        producer.send(record, callback).get();
+
+        var emailKey = "email";
+        var emailValue = "welcome to value email";
+        var emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", emailKey, emailValue);
+        producer.send(emailRecord, callback).get();
 
 
 
