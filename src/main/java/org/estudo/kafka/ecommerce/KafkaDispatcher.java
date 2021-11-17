@@ -11,14 +11,14 @@ import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
 //como fica uma porta aberta, implementamos o cloeable para fechar
-public class KafkaDispatcher implements Closeable {
-    private final KafkaProducer<String, String> producer;
+public class KafkaDispatcher<T> implements Closeable {
+    private final KafkaProducer<String, T> producer;
 
     KafkaDispatcher(){
         this.producer = new KafkaProducer<>(properties());
     }
 
-    public void send(String topic, String key, String value) throws ExecutionException, InterruptedException {
+    public void send(String topic, String key, T value) throws ExecutionException, InterruptedException {
         var record = new ProducerRecord<>(topic, key, value);
         //funciona de forma assyncrono
 //        producer.send(record).get();
@@ -39,7 +39,7 @@ public class KafkaDispatcher implements Closeable {
         //key
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         //value
-        properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, GsonSerializer.class.getName());
         return properties;
     }
 
