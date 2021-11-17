@@ -8,6 +8,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
+import java.util.UUID;
 
 public class FraudDetectorService {
 
@@ -48,7 +49,8 @@ public class FraudDetectorService {
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         //importante informar qual é o grupo que irá consumir essa mensagem
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, FraudDetectorService.class.getSimpleName());
-//        properties.setProperty(ConsumerConfig.,)
+        //definir um id para cada um que roda
+        properties.setProperty(ConsumerConfig.CLIENT_ID_CONFIG, FraudDetectorService.class.getSimpleName()+ " _ " +UUID.randomUUID());
 //        properties.setProperty(ConsumerConfig.,)
 //        properties.setProperty(ConsumerConfig.,)
 //        properties.setProperty(ConsumerConfig.,)
