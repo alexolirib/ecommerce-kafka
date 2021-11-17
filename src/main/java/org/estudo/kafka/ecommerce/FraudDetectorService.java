@@ -51,7 +51,8 @@ public class FraudDetectorService {
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, FraudDetectorService.class.getSimpleName());
         //definir um id para cada um que roda
         properties.setProperty(ConsumerConfig.CLIENT_ID_CONFIG, FraudDetectorService.class.getSimpleName()+ " _ " +UUID.randomUUID());
-//        properties.setProperty(ConsumerConfig.,)
+        //maximo de mensagem que será commitado - é criado um auto commit
+        properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
 //        properties.setProperty(ConsumerConfig.,)
 //        properties.setProperty(ConsumerConfig.,)
 //        properties.setProperty(ConsumerConfig.,)
