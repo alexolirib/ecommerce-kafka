@@ -9,7 +9,7 @@ public class NewOrderMain {
 
         //assim sempre vai fechar a conexão do kafka
         try(var orderDispatcher = new KafkaDispatcher<Order>()) {
-            try (var emailDispatcher = new KafkaDispatcher<String>()) {
+            try (var emailDispatcher = new KafkaDispatcher<Email>()) {
 
                 for (var i = 0; i < 10; i++) {
                     var userId = UUID.randomUUID().toString();
@@ -20,7 +20,8 @@ public class NewOrderMain {
 
                     var emailKey = "email";
                     var emailValue = "welcome to value email";
-                    emailDispatcher.send("ECOMMERCE_SEND_EMAIL", emailKey, emailValue);
+                    var email = new Email("subject teste", "body do email");
+                    emailDispatcher.send("ECOMMERCE_SEND_EMAIL", emailKey, email);
 
                 }
             }

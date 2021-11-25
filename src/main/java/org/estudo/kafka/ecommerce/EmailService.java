@@ -2,19 +2,24 @@ package org.estudo.kafka.ecommerce;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
-public class EmailServiceService {
+import java.util.Map;
+
+public class EmailService {
 
     public static void main(String[] args) {
-        var emailService = new EmailServiceService();
+        var emailService = new EmailService();
         try(var service = new KafkaService(
-                EmailServiceService.class.getSimpleName(),
+                EmailService.class.getSimpleName(),
                 "ECOMMERCE_SEND_EMAIL",
-                emailService::parse)) {
+                emailService::parse,
+                //classe que vou DESERIALIZER
+                Email.class,
+                Map.of())) {
             service.run();
         }
     }
 
-    private void parse(ConsumerRecord<String, String> record) {
+    private void parse(ConsumerRecord<String, Email> record) {
         System.out.println("------------------------------------------");
         System.out.println("Processing new Email, checking for email");
         System.out.println("------------------------------------------");
