@@ -26,6 +26,7 @@ public class LogService {
         System.out.println("------------------------------------------");
         System.out.println("Processing new order, checking for fraud");
         System.out.println("------------------------------------------");
+        System.out.println("TOPIC - "+ record.topic());
         System.out.println("key - "+ record.key());
         System.out.println("value - " + record.value());
         System.out.println("partition - " + record.partition());
