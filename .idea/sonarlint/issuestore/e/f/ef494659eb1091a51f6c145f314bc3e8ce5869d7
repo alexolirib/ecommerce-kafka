@@ -1,0 +1,17 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(³¼ƒÜ8¬—À¥Õ/
+U
+java:S6213":Rename this variable to not match a restricted identifier.(öˆè„ûÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÆÀ³À
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¡Œ‘°ıÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÆÀ³À
+N	java:S106"9Replace this use of System.out or System.err by a logger.(„¨À×
+N	java:S106"9Replace this use of System.out or System.err by a logger.(”šñü
+S	java:S106"9Replace this use of System.out or System.err by a logger.(×£¤ÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(…ßã·øÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÆÀ³À
+t
+java:S2142!"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€
+
+java:S1192"kDefine a constant instead of duplicating this literal "------------------------------------------" 3 times.(ÆÀ³À
