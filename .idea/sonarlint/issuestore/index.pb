@@ -19,7 +19,5 @@ u
 Eservice-new-order/src/main/java/org/estudo/kafka/ecommerce/Order.java,7/2/7209a3199c6d1c59de9a2138a3287ac178176594
 I
 service-new-order/pom.xml,3/e/3e47574fb605617448abae97a63710859007e535
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 x
 Hservice-email/src/main/java/org/estudo/kafka/ecommerce/EmailService.java,e/f/ef494659eb1091a51f6c145f314bc3e8ce5869d7

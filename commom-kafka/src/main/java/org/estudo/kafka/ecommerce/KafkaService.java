@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
-import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 
 public class KafkaService<T> implements Closeable {
@@ -44,11 +43,9 @@ public class KafkaService<T> implements Closeable {
             for (var record: records){
                 try {
                     this.parse.consume(record);
-                } catch (ExecutionException e) {
+                } catch (Exception e) {
                     //TRATAMENTO DE EXCEPTION SERÁ PARA LOGGAR
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    //TRATAMENTO DE EXCEPTION SERÁ PARA LOGGAR
+                    //pegar somente a exception, pois quero ser capaz de pegar qualquer tipo de mensagem
                     e.printStackTrace();
                 }
 
