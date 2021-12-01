@@ -8,11 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service-log" />
         <module name="commom-kafka" />
+        <module name="service-create-users" />
         <module name="service-fraud-detector" />
         <module name="service-new-order" />
         <module name="service-email" />
-        <module name="service-users" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="service-users" target="13" />
+    </bytecodeTargetLevel>
   </component>
 </project>

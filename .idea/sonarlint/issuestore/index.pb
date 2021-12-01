@@ -15,9 +15,11 @@ C
 service-log/pom.xml,5/3/53930f26e092026a97492f813c6dfd7fd8982c48
 u
 Eservice-new-order/src/main/java/org/estudo/kafka/ecommerce/Email.java,4/0/401b46fd2c147fb71f716e0a27e315fcc54f887b
-u
-Eservice-new-order/src/main/java/org/estudo/kafka/ecommerce/Order.java,7/2/7209a3199c6d1c59de9a2138a3287ac178176594
 I
 service-new-order/pom.xml,3/e/3e47574fb605617448abae97a63710859007e535
-x
-Hservice-email/src/main/java/org/estudo/kafka/ecommerce/EmailService.java,e/f/ef494659eb1091a51f6c145f314bc3e8ce5869d7
+z
+Jcommom-kafka/src/main/java/org/estudo/kafka/ecommerce/KafkaDispatcher.java,9/7/97da8743060ee3f8e0155fdd8f6008e2e519aea5
+z
+Jcommom-kafka/src/main/java/org/estudo/kafka/ecommerce/ConsumerFuncion.java,b/e/be47dd01b75ece28b0dc719d63b8a2986fb9c2f5
+w
+Gcommom-kafka/src/main/java/org/estudo/kafka/ecommerce/KafkaService.java,9/9/99dea7bfff9e7937cd3407bb6724d3c31f910c42

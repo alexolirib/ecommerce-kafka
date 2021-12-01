@@ -46,10 +46,10 @@ public class FraudDetectorService {
         if (idFraud(order)){
             // verificando se é maior que 4500 a solicitação
             System.out.println("Order is a fraud!!!!!!" );
-            orderKafkaDispatcher.send("ECOMMERCE_ORDER_REJECTED", order.getUserId(), order);
+            orderKafkaDispatcher.send("ECOMMERCE_ORDER_REJECTED", order.getEmail(), order);
         }else {
             System.out.println("Approved: "+ order);
-            orderKafkaDispatcher.send("ECOMMERCE_ORDER_APPROVED", order.getUserId(), order);
+            orderKafkaDispatcher.send("ECOMMERCE_ORDER_APPROVED", order.getEmail(), order);
         }
     }
 
