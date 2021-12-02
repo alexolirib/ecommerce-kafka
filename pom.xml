@@ -16,6 +16,7 @@
         <module>commom-kafka</module>
         <module>service-users</module>
         <module>service-create-users</module>
+        <module>service-httpecommerce</module>
     </modules>
 
     <properties>
